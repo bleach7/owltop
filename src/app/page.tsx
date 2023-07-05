@@ -1,11 +1,13 @@
+import { Heading, Text } from "@/components";
+
 const Home = () => {
   return (
     <section>
       <header>
-        <h1>Лучший агрегатор онлайн курсов</h1>
-        <p>
+        <Heading>Лучший агрегатор онлайн курсов</Heading>
+        <Text className="mt-[5px]">
           Подборки лучших курсов и рейтинги, основанные на реальных отзывах.
-        </p>
+        </Text>
       </header>
     </section>
   );
