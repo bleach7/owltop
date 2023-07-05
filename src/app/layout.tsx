@@ -1,4 +1,8 @@
 import { IChildren } from "@/interfaces";
+import "@fontsource/noto-sans/400.css";
+import "@fontsource/noto-sans/500.css";
+import "@fontsource/noto-sans/600.css";
+import "@fontsource/noto-sans/700.css";
 import { Metadata } from "next";
 import "./globals.css";
 
@@ -12,7 +16,7 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: IChildren) => {
   return (
     <html lang="ru" className="h-full scroll-smooth">
-      <body className="rendering-speed h-full bg-[#F5F6F8] text-[16px] font-normal leading-[21px] text-[#3B434E] antialiased">
+      <body className="rendering-speed font-noto-sans h-full bg-[#F5F6F8] text-[16px] font-normal leading-[21px] text-[#3B434E] antialiased">
         <div className="flex min-h-full flex-col overflow-hidden">
           <header className="lg:hidden">
             <div className="container">

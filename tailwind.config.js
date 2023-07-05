@@ -9,7 +9,11 @@ module.exports = {
       center: true,
       padding: "30px",
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        "noto-sans": ["'Noto Sans', sans-serif", "system-ui"],
+      },
+    },
   },
   plugins: [],
 };
