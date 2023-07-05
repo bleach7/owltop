@@ -5,6 +5,10 @@ module.exports = {
     "./public/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "30px",
+    },
     extend: {},
   },
   plugins: [],

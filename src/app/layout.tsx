@@ -1,6 +1,6 @@
+import { IChildren } from "@/interfaces";
 import { Metadata } from "next";
 import "./globals.css";
-import { IChildren } from "@/interfaces";
 
 export const metadata: Metadata = {
   title: "OWLtop",
@@ -11,8 +11,27 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: IChildren) => {
   return (
-    <html lang="ru">
-      <body>{children}</body>
+    <html lang="ru" className="h-full scroll-smooth">
+      <body className="rendering-speed h-full bg-[#F5F6F8] text-[16px] font-normal leading-[21px] text-[#3B434E] antialiased">
+        <div className="flex min-h-full flex-col overflow-hidden">
+          <header className="lg:hidden">
+            <div className="container">
+              <div>Header</div>
+            </div>
+          </header>
+          <div className="container flex-auto">
+            <div className="lg:grid lg:grid-cols-[250px_1fr] lg:gap-x-[30px]">
+              <aside className="hidden lg:block">Sidebar</aside>
+              <main>{children}</main>
+            </div>
+          </div>
+          <footer>
+            <div className="container">
+              <div>Footer</div>
+            </div>
+          </footer>
+        </div>
+      </body>
     </html>
   );
 };
