@@ -15,8 +15,8 @@ export const MenuToggler = ({
 }: IMenuToggler) => {
   return (
     <motion.button
-      whileHover={{ scale: 1.2 }}
-      whileTap={{ scale: 0.8 }}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.9 }}
       aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
       aria-controls="menu"
       aria-expanded={isOpen}
