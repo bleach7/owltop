@@ -5,6 +5,7 @@ import classNames from "classnames";
 import { motion } from "framer-motion";
 import { Logo } from "../Logo";
 import { MenuToggler } from "../MenuToggler";
+import { Search } from "../Search";
 
 const variants = {
   opened: {
@@ -43,6 +44,7 @@ export const MobileSidebar = ({ className }: { className: string }) => {
           <Logo onClick={handleCloseMenuWithLogo} />
           <MenuToggler onClick={onCloseMenu} isOpen />
         </div>
+        <Search className="mt-[20px]" />
       </div>
     </motion.aside>
   );

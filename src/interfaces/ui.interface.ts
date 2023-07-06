@@ -2,9 +2,15 @@ import { LinkProps } from "next/link";
 import {
   AnchorHTMLAttributes,
   ButtonHTMLAttributes,
+  FormHTMLAttributes,
   HTMLAttributes,
+  InputHTMLAttributes,
   SVGAttributes,
 } from "react";
+
+export type IInputElement = InputHTMLAttributes<HTMLInputElement>;
+
+export type IFormElement = FormHTMLAttributes<HTMLFormElement>;
 
 export type ISVGElement = SVGAttributes<SVGSVGElement>;
 

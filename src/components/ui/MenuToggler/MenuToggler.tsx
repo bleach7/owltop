@@ -1,4 +1,7 @@
+"use client";
+
 import classNames from "classnames";
+import { motion } from "framer-motion";
 import {
   HamburgerCloseIcon,
   HamburgerOpenIcon,
@@ -11,7 +14,9 @@ export const MenuToggler = ({
   ...props
 }: IMenuToggler) => {
   return (
-    <button
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.9 }}
       aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
       aria-controls="menu"
       aria-expanded={isOpen}
@@ -27,6 +32,6 @@ export const MenuToggler = ({
       ) : (
         <HamburgerOpenIcon className="h-auto w-[20px]" />
       )}
-    </button>
+    </motion.button>
   );
 };

@@ -5,6 +5,7 @@ const NotFound = () => {
   return (
     <>
       <title>{appTitle("Ресурс не найден")}</title>
+      <meta name="theme-color" content="#7653FC" />
       <section>
         <header>
           <Heading>Ресурс не найден :{"("}</Heading>
