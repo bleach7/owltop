@@ -1,4 +1,11 @@
-import { Footer, Header, MobileSidebar, Sidebar, SkipLink } from "@/components";
+import {
+  ButtonScrollToTop,
+  Footer,
+  Header,
+  MobileSidebar,
+  Sidebar,
+  SkipLink,
+} from "@/components";
 import { ReactNode } from "react";
 
 export const AppLayout = ({ children }: { children: ReactNode }) => {
@@ -16,6 +23,7 @@ export const AppLayout = ({ children }: { children: ReactNode }) => {
         </div>
         <Footer />
       </div>
+      <ButtonScrollToTop />
     </>
   );
 };

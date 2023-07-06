@@ -1,7 +1,7 @@
 "use client";
 
 import { Heading } from "@/components";
-import { convertToTextNormal } from "@/utils";
+import { appTitle, convertToTextNormal } from "@/utils";
 import { useSearchParams } from "next/navigation";
 
 const SearchPage = () => {
@@ -10,13 +10,18 @@ const SearchPage = () => {
   const searchValue = searchParams.get("keyword");
 
   return (
-    <section>
-      <header>
-        <Heading>
-          {searchValue ? `Поиск: ${convertToTextNormal(searchValue)}` : "Поиск"}
-        </Heading>
-      </header>
-    </section>
+    <>
+      <title>{appTitle("Поиск")}</title>
+      <section>
+        <header>
+          <Heading>
+            {searchValue
+              ? `Поиск: ${convertToTextNormal(searchValue)}`
+              : "Поиск"}
+          </Heading>
+        </header>
+      </section>
+    </>
   );
 };
 

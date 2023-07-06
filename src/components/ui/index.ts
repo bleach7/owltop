@@ -1,4 +1,5 @@
 export * from "./ButtonGoBack";
+export * from "./ButtonScrollToTop";
 export * from "./Footer";
 export * from "./Header";
 export * from "./Heading";
