@@ -5,6 +5,7 @@ export * from "./Header";
 export * from "./Heading";
 export * from "./Input";
 export * from "./Logo";
+export * from "./Menu";
 export * from "./MenuToggler";
 export * from "./MobileSidebar";
 export * from "./Search";

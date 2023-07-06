@@ -4,6 +4,7 @@ import { useAppStore } from "@/hooks";
 import classNames from "classnames";
 import { motion } from "framer-motion";
 import { Logo } from "../Logo";
+import { Menu } from "../Menu";
 import { MenuToggler } from "../MenuToggler";
 import { Search } from "../Search";
 
@@ -45,6 +46,7 @@ export const MobileSidebar = ({ className }: { className: string }) => {
           <MenuToggler onClick={onCloseMenu} isOpen />
         </div>
         <Search className="mt-[20px]" />
+        <Menu className="mt-[30px]" />
       </div>
     </motion.aside>
   );

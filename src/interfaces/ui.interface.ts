@@ -27,3 +27,10 @@ export type IAnchorElement = AnchorHTMLAttributes<HTMLAnchorElement>;
 export interface ILinkElement
   extends AnchorHTMLAttributes<HTMLAnchorElement>,
     Omit<LinkProps, "href"> {}
+
+export enum ETopLevelCategory {
+  Courses,
+  Services,
+  Books,
+  Products,
+}
