@@ -20,6 +20,7 @@ export const Search = ({ className, ...props }: ISearch) => {
     register,
     formState: { errors, isDirty },
     resetField,
+    setFocus,
   } = useForm<ISearchSubmitData>({
     resolver: yupResolver(searchSchema),
     defaultValues: {
@@ -37,6 +38,8 @@ export const Search = ({ className, ...props }: ISearch) => {
 
   const handleResetForm = () => {
     resetField("searchQuery");
+
+    setFocus("searchQuery");
   };
 
   return (
