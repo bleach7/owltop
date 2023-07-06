@@ -3,6 +3,8 @@ export * from "./Footer";
 export * from "./Header";
 export * from "./Heading";
 export * from "./Logo";
+export * from "./MenuToggler";
+export * from "./MobileSidebar";
 export * from "./Sidebar";
 export * from "./SkipLink";
 export * from "./Text";

@@ -1,4 +1,4 @@
-import { Footer, Header, Sidebar, SkipLink } from "@/components";
+import { Footer, Header, MobileSidebar, Sidebar, SkipLink } from "@/components";
 import { ReactNode } from "react";
 
 export const AppLayout = ({ children }: { children: ReactNode }) => {
@@ -10,6 +10,7 @@ export const AppLayout = ({ children }: { children: ReactNode }) => {
         <div className="container flex-auto">
           <div className="pb-[100px] lg:grid lg:grid-cols-[250px_1fr] lg:gap-x-[30px] lg:pt-[35px]">
             <Sidebar className="hidden lg:block" />
+            <MobileSidebar className="lg:hidden" />
             <main id="main">{children}</main>
           </div>
         </div>

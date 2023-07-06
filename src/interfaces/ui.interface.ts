@@ -3,7 +3,10 @@ import {
   AnchorHTMLAttributes,
   ButtonHTMLAttributes,
   HTMLAttributes,
+  SVGAttributes,
 } from "react";
+
+export type ISVGElement = SVGAttributes<SVGSVGElement>;
 
 export type IDivElement = HTMLAttributes<HTMLDivElement>;
 

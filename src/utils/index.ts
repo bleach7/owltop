@@ -1,1 +1,1 @@
-export * from "./appTitle";
+export * from "./appTitle.util";
