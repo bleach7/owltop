@@ -3,6 +3,14 @@ import { firstLevelMenuItems } from "@/constants";
 import { appTitle } from "@/utils";
 import { notFound } from "next/navigation";
 
+interface IContext {
+  params: IParams;
+}
+
+interface IParams {
+  type: string;
+}
+
 export const generateStaticParams = async () => {
   const paths = firstLevelMenuItems.map((firstLevelMenuItem) => {
     return {
@@ -13,7 +21,7 @@ export const generateStaticParams = async () => {
   return paths;
 };
 
-const TypeProductPage = ({ params }: { params: { type: string } }) => {
+const TypeProductPage = ({ params }: IContext) => {
   const title = firstLevelMenuItems.find(
     (firstLevelMenuItem) => firstLevelMenuItem.route === params.type
   )?.name;
