@@ -1,26 +1,21 @@
 "use client";
 
 import classNames from "classnames";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { useState } from "react";
 import { ArrowUpIcon } from "../../../../public/imgs/icons";
 
 export const ButtonScrollToTop = () => {
   const [isCrolling, setIsCrolling] = useState(false);
+  const { scrollY } = useScroll();
 
-  useEffect(() => {
-    const handleToggleVisible = () => {
-      if (window.scrollY > 100) {
-        setIsCrolling(true);
-      } else {
-        setIsCrolling(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleToggleVisible);
-
-    return () => window.removeEventListener("scroll", handleToggleVisible);
-  }, []);
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest > 100) {
+      setIsCrolling(true);
+    } else {
+      setIsCrolling(false);
+    }
+  });
 
   const scrollToTop = () => {
     if (window) {
