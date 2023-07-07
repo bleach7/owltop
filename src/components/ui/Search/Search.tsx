@@ -1,12 +1,12 @@
 "use client";
 
+import { SearchIcon, SearchResetIcon } from "@/imgs/icons";
 import { convertToTextQuery } from "@/utils";
 import { yupResolver } from "@hookform/resolvers/yup";
 import classNames from "classnames";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
-import { SearchIcon, SearchResetIcon } from "../../../../public/imgs/icons";
 import { Input } from "../Input";
 import { Text } from "../Text";
 import { ISearch, ISearchSubmitData } from "./Search.interface";

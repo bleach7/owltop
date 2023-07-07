@@ -1,12 +1,12 @@
 "use client";
 
 import { firstLevelMenuItems } from "@/constants";
+import { ArrowDownIcon } from "@/imgs/icons";
 import { ETopLevelCategory } from "@/interfaces";
 import classNames from "classnames";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { memo, useState } from "react";
-import { ArrowDownIcon } from "../../../../public/imgs/icons";
 import { IMenu } from "./Menu.interface";
 
 export const Menu = ({ className, ...props }: IMenu) => {

@@ -1,9 +1,9 @@
 "use client";
 
+import { ArrowUpIcon } from "@/imgs/icons";
 import classNames from "classnames";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
-import { ArrowUpIcon } from "../../../../public/imgs/icons";
 
 export const ButtonScrollToTop = () => {
   const [isCrolling, setIsCrolling] = useState(false);

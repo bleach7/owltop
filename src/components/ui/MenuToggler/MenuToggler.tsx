@@ -1,11 +1,8 @@
 "use client";
 
+import { HamburgerCloseIcon, HamburgerOpenIcon } from "@/imgs/icons";
 import classNames from "classnames";
 import { motion } from "framer-motion";
-import {
-  HamburgerCloseIcon,
-  HamburgerOpenIcon,
-} from "../../../../public/imgs/icons";
 import { IMenuToggler } from "./MenuToggler.interface";
 
 export const MenuToggler = ({
