@@ -5,7 +5,7 @@ import { ETopLevelCategory } from "@/interfaces";
 import classNames from "classnames";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { memo } from "react";
+import { memo, useState } from "react";
 import { ArrowDownIcon } from "../../../../public/imgs/icons";
 import { IMenu } from "./Menu.interface";
 
@@ -42,6 +42,11 @@ const FirstLevelMenuItem = memo(
     id: ETopLevelCategory;
   }) => {
     const pathname = usePathname();
+    const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+
+    const handleToggleSubMenuOpen = () => {
+      setIsSubMenuOpen((prevState) => !prevState);
+    };
 
     return (
       <li className="flex flex-wrap items-center justify-between gap-[10px]">
@@ -58,11 +63,19 @@ const FirstLevelMenuItem = memo(
           <span className="text-[18px] font-medium leading-[24px]">{name}</span>
         </Link>
         <button
+          onClick={handleToggleSubMenuOpen}
           type="button"
           aria-label={`Открыть подменю ${name}`}
-          className=" hidden h-[24px] w-[40px] items-center justify-center transition-colors duration-300 ease-in-out focus:outline-none focus-visible:outline-[#7653FC] active:text-[#7653FC] md:hover:text-[#7653FC]"
+          className="flex h-[24px] w-[40px] items-center justify-center transition-colors duration-300 ease-in-out focus:outline-none focus-visible:outline-[#7653FC] active:text-[#7653FC] md:hover:text-[#7653FC]"
         >
-          <ArrowDownIcon className="h-auto w-[20px]" />
+          <ArrowDownIcon
+            className={classNames(
+              "h-auto w-[20px] transition-transform duration-300 ease-in-out",
+              {
+                ["rotate-180 text-[#7653FC]"]: isSubMenuOpen,
+              }
+            )}
+          />
         </button>
       </li>
     );
