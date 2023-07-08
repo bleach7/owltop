@@ -8,6 +8,7 @@ export * from "./Logo";
 export * from "./Menu";
 export * from "./MenuToggler";
 export * from "./MobileSidebar";
+export * from "./ProgressBar";
 export * from "./Search";
 export * from "./Sidebar";
 export * from "./SkipLink";
