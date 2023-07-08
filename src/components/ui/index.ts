@@ -1,3 +1,4 @@
+export * from "./Badge";
 export * from "./ButtonGoBack";
 export * from "./ButtonScrollToTop";
 export * from "./Footer";

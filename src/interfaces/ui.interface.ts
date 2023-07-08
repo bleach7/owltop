@@ -8,6 +8,8 @@ import {
   SVGAttributes,
 } from "react";
 
+export type ISpanElement = HTMLAttributes<HTMLSpanElement>;
+
 export type IInputElement = InputHTMLAttributes<HTMLInputElement>;
 
 export type IFormElement = FormHTMLAttributes<HTMLFormElement>;

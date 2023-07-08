@@ -1,6 +1,5 @@
 import { Heading } from "@/components";
 import { firstLevelMenuItems } from "@/constants";
-import { appTitle } from "@/utils";
 import { notFound } from "next/navigation";
 
 interface IContext {
@@ -32,14 +31,11 @@ const Category = ({ params }: IContext) => {
     }
 
     return (
-      <>
-        <title>{appTitle(title)}</title>
-        <section>
-          <header>
-            <Heading>{title}</Heading>
-          </header>
-        </section>
-      </>
+      <section>
+        <header>
+          <Heading>{title}</Heading>
+        </header>
+      </section>
     );
   } catch (error) {
     notFound();

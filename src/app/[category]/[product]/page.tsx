@@ -1,6 +1,8 @@
 import { getMenu, getPage, getProducts } from "@/__api";
-import { Heading } from "@/components";
 import { firstLevelMenuItems } from "@/constants";
+import { ProductScreen } from "@/screens";
+import { appTitle } from "@/utils";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 interface IContext {
@@ -33,6 +35,17 @@ export const generateStaticParams = async () => {
   return paths;
 };
 
+export const generateMetadata = async ({
+  params,
+}: IContext): Promise<Metadata> => {
+  const page = await getPage(params.product);
+
+  return {
+    title: appTitle(page.metaTitle),
+    description: page.metaDescription,
+  };
+};
+
 const Product = async ({ params }: IContext) => {
   try {
     if (!params || !params.category || !params.product) {
@@ -50,22 +63,15 @@ const Product = async ({ params }: IContext) => {
     const page = await getPage(params.product);
     const products = await getProducts(page.category);
 
+    if (!page) {
+      notFound();
+    }
+
     if (!page.title) {
       notFound();
     }
 
-    if (products.length === 0) {
-      notFound();
-    }
-
-    return (
-      <section>
-        <header>
-          <Heading>{page.title}</Heading>
-          <p>{products.length}</p>
-        </header>
-      </section>
-    );
+    return <ProductScreen page={page} products={products} />;
   } catch (error) {
     notFound();
   }
