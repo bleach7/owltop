@@ -1,25 +1,20 @@
-"use client";
+import { Text } from "@/components";
+import { SearchScreen } from "@/screens";
+import { appTitle } from "@/utils";
+import { Suspense } from "react";
 
-import { Heading } from "@/components";
-import { appTitle, convertToTextNormal } from "@/utils";
-import { useSearchParams } from "next/navigation";
+const SearchScreenFallback = () => {
+  return <Text as="span">Поиск...</Text>;
+};
 
 const SearchPage = () => {
-  const searchParams = useSearchParams();
-
-  const searchValue = searchParams.get("keyword");
-
   return (
     <>
       <title>{appTitle("Поиск")}</title>
       <section>
-        <header>
-          <Heading>
-            {searchValue
-              ? `Поиск: ${convertToTextNormal(searchValue)}`
-              : "Поиск"}
-          </Heading>
-        </header>
+        <Suspense fallback={<SearchScreenFallback />}>
+          <SearchScreen />
+        </Suspense>
       </section>
     </>
   );
