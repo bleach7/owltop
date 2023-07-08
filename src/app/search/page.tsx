@@ -1,3 +1,4 @@
+import { withAppLayout } from "@/hocs";
 import { SearchScreen } from "@/screens";
 import { Suspense } from "react";
 import SearchLoading from "./loading";
@@ -10,4 +11,4 @@ const SearchPage = () => {
   );
 };
 
-export default SearchPage;
+export default withAppLayout(SearchPage);

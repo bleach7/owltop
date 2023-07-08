@@ -1,11 +1,12 @@
 import { getMenu, getPage, getProducts } from "@/__api";
 import { firstLevelMenuItems } from "@/constants";
+import { withAppLayout } from "@/hocs";
 import { ProductScreen } from "@/screens";
 import { appTitle } from "@/utils";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-interface IContext {
+interface IContext extends Record<string, unknown> {
   params: IParams;
 }
 
@@ -77,4 +78,4 @@ const Product = async ({ params }: IContext) => {
   }
 };
 
-export default Product;
+export default withAppLayout(Product);

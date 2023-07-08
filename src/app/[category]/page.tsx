@@ -1,8 +1,9 @@
 import { Heading } from "@/components";
 import { firstLevelMenuItems } from "@/constants";
+import { withAppLayout } from "@/hocs";
 import { notFound } from "next/navigation";
 
-interface IContext {
+interface IContext extends Record<string, unknown> {
   params: IParams;
 }
 
@@ -42,4 +43,4 @@ const Category = ({ params }: IContext) => {
   }
 };
 
-export default Category;
+export default withAppLayout(Category);

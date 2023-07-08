@@ -1,4 +1,5 @@
 import { Heading, Text } from "@/components";
+import { withAppLayout } from "@/hocs";
 
 const Home = () => {
   return (
@@ -13,4 +14,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default withAppLayout(Home);
