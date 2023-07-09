@@ -12,6 +12,7 @@ export * from "./Books.icon";
 export * from "./Courses.icon";
 export * from "./Loader.icon";
 export * from "./Products.icon";
+export * from "./RatingStar.icon";
 export * from "./Services.icon";
 
 export { ArrowDownIcon, ArrowUpIcon };

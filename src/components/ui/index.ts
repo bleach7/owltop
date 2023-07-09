@@ -10,6 +10,7 @@ export * from "./Menu";
 export * from "./MenuToggler";
 export * from "./MobileSidebar";
 export * from "./ProgressBar";
+export * from "./Rating";
 export * from "./Search";
 export * from "./Sidebar";
 export * from "./SkipLink";

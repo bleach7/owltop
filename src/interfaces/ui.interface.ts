@@ -9,6 +9,8 @@ import {
   TextareaHTMLAttributes,
 } from "react";
 
+export type IUListElement = HTMLAttributes<HTMLUListElement>;
+
 export type ITextAreaElement = TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 export type ISpanElement = HTMLAttributes<HTMLSpanElement>;
