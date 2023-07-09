@@ -1,5 +1,10 @@
 import { IProductData, IProductPageData } from "@/interfaces";
-import { ProductHeader, ProductSkills } from "@/modules";
+import {
+  ProductAbout,
+  ProductAdvantages,
+  ProductHeader,
+  ProductSkills,
+} from "@/modules";
 
 export const ProductScreen = ({
   page,
@@ -11,6 +16,8 @@ export const ProductScreen = ({
   return (
     <>
       <ProductHeader title={page.title} productCount={products.length} />
+      <ProductAdvantages advantages={page.advantages} className="mt-[45px]" />
+      <ProductAbout about={page.seoText} className="mt-[30px]" />
       <ProductSkills skills={page.tags} className="mt-[30px]" />
     </>
   );

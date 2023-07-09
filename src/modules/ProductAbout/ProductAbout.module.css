@@ -1,0 +1,15 @@
+.about {
+  @apply text-[18px] leading-[24px];
+}
+
+.about h2 {
+  @apply my-[20px] text-[22px] font-semibold leading-[29px];
+}
+
+.about h3 {
+  @apply my-[20px] text-[20px] font-semibold leading-[27px];
+}
+
+.about ul {
+  @apply my-[10px] list-inside list-disc;
+}

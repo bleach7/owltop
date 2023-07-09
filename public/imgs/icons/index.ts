@@ -7,6 +7,7 @@ import {
   IoIosArrowUp as ArrowUpIcon,
 } from "react-icons/io";
 
+export * from "./Advantage.icon";
 export * from "./Books.icon";
 export * from "./Courses.icon";
 export * from "./Loader.icon";

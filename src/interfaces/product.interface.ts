@@ -12,7 +12,7 @@ export interface IProductPageData {
   metaTitle: string;
   metaDescription: string;
   firstCategory: ETopLevelCategory;
-  IProductPageAdvantageDatas: IProductPageAdvantageData[];
+  advantages: IProductPageAdvantageData[];
   createdAt: string;
   updatedAt: string;
   __v: number;
