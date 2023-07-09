@@ -1,3 +1,4 @@
+import { getAllMenu } from "@/api";
 import { Providers } from "@/providers";
 import { appTitle } from "@/utils";
 import "@fontsource/noto-sans/400.css";
@@ -16,10 +17,12 @@ export const metadata: Metadata = {
 };
 
 const RootLayout = async ({ children }: { children: ReactNode }) => {
+  const allMenu = await getAllMenu();
+
   return (
     <html lang="ru" className="h-full scroll-smooth">
       <body className="rendering-speed h-full bg-[#F5F6F8] font-noto-sans text-[16px] font-normal leading-[21px] text-[#3B434E] antialiased">
-        <Providers allMenu={[]}>{children}</Providers>
+        <Providers allMenu={allMenu}>{children}</Providers>
       </body>
     </html>
   );

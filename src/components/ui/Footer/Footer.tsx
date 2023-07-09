@@ -27,13 +27,13 @@ export const Footer = ({ className, ...props }: IFooter) => {
           </Text>
           <div className="flex flex-col items-center gap-x-[30px] gap-y-[20px] sm:flex-row xl:gap-x-[40px]">
             <Link
-              href="user-agreement"
+              href="/user-agreement"
               className="inline-block focus:outline-none focus-visible:outline-[#DE0000] active:underline md:hover:underline"
             >
               Пользовательское соглашение
             </Link>
             <Link
-              href="privacy-policy"
+              href="/privacy-policy"
               className="inline-block focus:outline-none focus-visible:outline-[#DE0000] active:underline md:hover:underline"
             >
               Политика конфиденциальности

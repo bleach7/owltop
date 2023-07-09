@@ -11,7 +11,7 @@ export const ProductHeader = ({
     <section className={className} {...props}>
       <header className="flex flex-col items-start gap-x-[20px] gap-y-[20px] xl:flex-row xl:justify-between">
         <div className="flex w-full justify-between gap-[20px] md:w-auto md:justify-start">
-          <Heading className="xl:max-w-[400px]">{title}</Heading>
+          <Heading>{title}</Heading>
           {productCount > 0 && (
             <Badge appearance="gray" className="mt-[4px] h-fit">
               {productCount}
