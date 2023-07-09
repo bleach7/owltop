@@ -6,7 +6,10 @@ import {
   HTMLAttributes,
   InputHTMLAttributes,
   SVGAttributes,
+  TextareaHTMLAttributes,
 } from "react";
+
+export type ITextAreaElement = TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 export type ISpanElement = HTMLAttributes<HTMLSpanElement>;
 

@@ -14,3 +14,4 @@ export * from "./Search";
 export * from "./Sidebar";
 export * from "./SkipLink";
 export * from "./Text";
+export * from "./TextArea";
