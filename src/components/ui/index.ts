@@ -1,6 +1,7 @@
 export * from "./Badge";
 export * from "./ButtonGoBack";
 export * from "./ButtonScrollToTop";
+export * from "./Divider";
 export * from "./Footer";
 export * from "./Header";
 export * from "./Heading";
@@ -9,6 +10,8 @@ export * from "./Logo";
 export * from "./Menu";
 export * from "./MenuToggler";
 export * from "./MobileSidebar";
+export * from "./ProductItem";
+export * from "./ProductItemFooter";
 export * from "./ProgressBar";
 export * from "./Rating";
 export * from "./Search";
