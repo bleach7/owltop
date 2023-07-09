@@ -1,3 +1,5 @@
-import { IDivElement } from "@/interfaces";
+import { IAllMenu, IDivElement } from "@/interfaces";
 
-export type ISidebar = IDivElement;
+export interface ISidebar extends IDivElement {
+  allMenu: IAllMenu;
+}

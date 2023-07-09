@@ -1,5 +1,4 @@
 import { ButtonGoBack, Heading } from "@/components";
-import { withAppLayout } from "@/hocs";
 
 const NotFound = () => {
   return (
@@ -12,4 +11,4 @@ const NotFound = () => {
   );
 };
 
-export default withAppLayout(NotFound);
+export default NotFound;

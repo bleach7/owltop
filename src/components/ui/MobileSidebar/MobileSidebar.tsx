@@ -1,6 +1,7 @@
 "use client";
 
 import { useAppStore } from "@/hooks";
+import { IAllMenu } from "@/interfaces";
 import classNames from "classnames";
 import { motion } from "framer-motion";
 import { Logo } from "../Logo";
@@ -22,7 +23,13 @@ const variants = {
   },
 };
 
-export const MobileSidebar = ({ className }: { className: string }) => {
+export const MobileSidebar = ({
+  allMenu,
+  className,
+}: {
+  className: string;
+  allMenu: IAllMenu;
+}) => {
   const { isMenuOpen, onCloseMenu } = useAppStore();
 
   const handleCloseMenuWithLogo = () => {
@@ -46,7 +53,7 @@ export const MobileSidebar = ({ className }: { className: string }) => {
           <MenuToggler onClick={onCloseMenu} isOpen />
         </div>
         <Search className="mt-[20px]" />
-        <Menu className="mt-[30px]" />
+        <Menu allMenu={allMenu} className="mt-[30px]" />
       </div>
     </motion.aside>
   );

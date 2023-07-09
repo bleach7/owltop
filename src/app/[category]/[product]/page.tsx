@@ -1,12 +1,9 @@
-import { getMenu, getPage, getProducts } from "@/__api";
+import { getMenu, getPage, getProducts } from "@/api";
 import { firstLevelMenuItems } from "@/constants";
-import { withAppLayout } from "@/hocs";
 import { ProductScreen } from "@/screens";
-import { appTitle } from "@/utils";
-import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-interface IContext extends Record<string, unknown> {
+interface IContext {
   params: IParams;
 }
 
@@ -17,7 +14,7 @@ interface IParams {
 
 type IPath = IParams;
 
-export const generateStaticParams = async () => {
+export const generateStaticParams = async (): Promise<IPath[]> => {
   let paths: IPath[] = [];
 
   for (const firstLevelMenuItem of firstLevelMenuItems) {
@@ -34,17 +31,6 @@ export const generateStaticParams = async () => {
   }
 
   return paths;
-};
-
-export const generateMetadata = async ({
-  params,
-}: IContext): Promise<Metadata> => {
-  const page = await getPage(params.product);
-
-  return {
-    title: appTitle(page.metaTitle),
-    description: page.metaDescription,
-  };
 };
 
 const Product = async ({ params }: IContext) => {
@@ -78,4 +64,4 @@ const Product = async ({ params }: IContext) => {
   }
 };
 
-export default withAppLayout(Product);
+export default Product;

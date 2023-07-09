@@ -1,12 +1,22 @@
 import { ProgressBar } from "@/components";
+import { IAllMenu } from "@/interfaces";
+import { AppLayout } from "@/layouts";
 import { AppStoreProvider } from "@/store";
 import { ReactNode } from "react";
 
-export const Providers = ({ children }: { children: ReactNode }) => {
+export const Providers = ({
+  children,
+  allMenu,
+}: {
+  children: ReactNode;
+  allMenu: IAllMenu;
+}) => {
   return (
     <AppStoreProvider>
-      <ProgressBar />
-      {children}
+      <AppLayout allMenu={allMenu}>
+        <ProgressBar />
+        {children}
+      </AppLayout>
     </AppStoreProvider>
   );
 };

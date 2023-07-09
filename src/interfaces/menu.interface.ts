@@ -1,4 +1,13 @@
+import { ETopLevelCategory } from "./ui.interface";
+
 export type IMenuItemsData = IMenuItemData[];
+
+export type IAllMenu = IAllMenuItem[];
+
+export interface IAllMenuItem {
+  id: ETopLevelCategory;
+  menuItems: IMenuItemsData;
+}
 
 export interface IMenuItemData {
   _id: IMenuItemIDData;
