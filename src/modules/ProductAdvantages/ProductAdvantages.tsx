@@ -25,7 +25,7 @@ export const ProductAdvantages = ({
             return (
               <li
                 key={advantage._id}
-                className="grid grid-cols-[35px_1fr] gap-x-[20px] md:grid-cols-[50px_1fr] md:gap-x-[40px]"
+                className="grid grid-cols-[40px_1fr] gap-x-[20px] md:grid-cols-[50px_1fr] md:gap-x-[40px]"
               >
                 <AdvantageIcon className="h-auto w-full" />
                 <Heading as="h3" size="sm" className="self-center">
@@ -38,7 +38,7 @@ export const ProductAdvantages = ({
           return (
             <li
               key={advantage._id}
-              className="grid grid-cols-[35px_1fr] gap-x-[20px] gap-y-[10px] md:grid-cols-[50px_1fr] md:gap-x-[40px] md:gap-y-[15px]"
+              className="grid grid-cols-[40px_1fr] gap-x-[20px] gap-y-[10px] md:grid-cols-[50px_1fr] md:gap-x-[40px] md:gap-y-[15px]"
             >
               <AdvantageIcon className="h-auto w-full" />
               <Heading as="h3" size="sm" className="self-center">

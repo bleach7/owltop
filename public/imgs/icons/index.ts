@@ -10,6 +10,7 @@ import {
 export * from "./Advantage.icon";
 export * from "./Books.icon";
 export * from "./Courses.icon";
+export * from "./HHStar.icon";
 export * from "./Loader.icon";
 export * from "./Products.icon";
 export * from "./RatingStar.icon";
