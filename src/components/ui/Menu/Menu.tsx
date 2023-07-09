@@ -63,10 +63,17 @@ const FirstLevelMenuItem = ({
     setIsSubMenuOpen((prevState) => !prevState);
   };
 
+  const handleScrollToTop = () => {
+    if (window) {
+      window.scrollTo(0, 0);
+    }
+  };
+
   return (
     <li className="flex flex-col">
       <div className="flex flex-wrap items-center justify-between gap-[10px]">
         <Link
+          onClick={handleScrollToTop}
           href={`/${route}`}
           className={classNames(
             "grid w-fit grid-cols-[24px_1fr] items-center gap-x-[20px] transition-colors duration-300 ease-in-out focus:outline-none focus-visible:outline-[#7653FC] active:text-[#7653FC] md:hover:text-[#7653FC]",
@@ -159,7 +166,12 @@ const SecondLevelMenuItem = ({
       <button
         onClick={handleToggleSubMenu}
         type="button"
-        className="inline-block text-[16px] leading-[21px] transition-colors duration-300 ease-in-out focus:outline-none focus-visible:outline-[#7653FC] active:text-[#7653FC] md:hover:text-[#7653FC]"
+        className={classNames(
+          "inline-block text-[16px] leading-[21px] transition-colors duration-300 ease-in-out focus:outline-none focus-visible:outline-[#7653FC] active:text-[#7653FC] md:hover:text-[#7653FC]",
+          {
+            ["text-[#7653FC]"]: isSubMenu,
+          }
+        )}
       >
         {menuItem._id.secondCategory}
       </button>
@@ -201,9 +213,17 @@ const ThirdLevelMenuItem = ({
 
   const productRoute = `/${route}/${page.alias}`;
 
+  const handleScrollToTop = () => {
+    if (window) {
+      window.scrollTo(0, 0);
+    }
+  };
+
   return (
     <li key={page._id} className="flex">
       <Link
+        scroll={false}
+        onClick={handleScrollToTop}
         href={productRoute}
         className={classNames(
           "inline-block text-[14px] leading-[19px] transition-colors duration-300 ease-in-out focus:outline-none focus-visible:outline-[#7653FC] active:text-[#7653FC] md:hover:text-[#7653FC]",

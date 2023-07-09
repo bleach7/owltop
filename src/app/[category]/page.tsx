@@ -1,5 +1,6 @@
-import { Heading } from "@/components";
+import { getMenu } from "@/api";
 import { firstLevelMenuItems } from "@/constants";
+import { CategoryScreen } from "@/screens";
 import { appTitle } from "@/utils";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -40,8 +41,12 @@ export const generateMetadata = ({ params }: IContext): Metadata => {
   };
 };
 
-const Category = ({ params }: IContext) => {
+const Category = async ({ params }: IContext) => {
   try {
+    const categoryId = firstLevelMenuItems.find(
+      (firstLevelMenuItem) => firstLevelMenuItem.route === params.category
+    )?.id;
+
     const title = firstLevelMenuItems.find(
       (firstLevelMenuItem) => firstLevelMenuItem.route === params.category
     )?.name;
@@ -50,12 +55,10 @@ const Category = ({ params }: IContext) => {
       notFound();
     }
 
+    const menu = await getMenu(categoryId as any);
+
     return (
-      <section>
-        <header>
-          <Heading>{title}</Heading>
-        </header>
-      </section>
+      <CategoryScreen category={params.category} title={title} menu={menu} />
     );
   } catch (error) {
     notFound();

@@ -21,7 +21,10 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
 
   return (
     <html lang="ru" className="h-full scroll-smooth">
-      <body className="rendering-speed h-full bg-[#F5F6F8] font-noto-sans text-[16px] font-normal leading-[21px] text-[#3B434E] antialiased">
+      <body
+        className="rendering-speed h-full bg-[#F5F6F8] font-noto-sans text-[16px] font-normal leading-[21px] text-[#3B434E] antialiased"
+        style={{ scrollBehavior: "smooth" }}
+      >
         <Providers allMenu={allMenu}>{children}</Providers>
       </body>
     </html>
