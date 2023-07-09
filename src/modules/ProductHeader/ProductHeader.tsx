@@ -1,4 +1,4 @@
-import { Badge, Heading } from "@/components";
+import { Badge, Heading, SortingControllers } from "@/components";
 import { IProductHeader } from "./ProductHeader.interface";
 
 export const ProductHeader = ({
@@ -9,11 +9,16 @@ export const ProductHeader = ({
 }: IProductHeader) => {
   return (
     <section className={className} {...props}>
-      <header className="flex items-center justify-between">
-        <div className="flex flex-wrap items-center gap-[20px]">
-          <Heading>{title}</Heading>
-          {productCount > 0 && <Badge appearance="gray">{productCount}</Badge>}
+      <header className="flex flex-col items-start gap-x-[20px] gap-y-[20px] xl:flex-row xl:justify-between">
+        <div className="flex w-full justify-between gap-[20px] md:w-auto md:justify-start">
+          <Heading className="xl:max-w-[400px]">{title}</Heading>
+          {productCount > 0 && (
+            <Badge appearance="gray" className="mt-[4px] h-fit">
+              {productCount}
+            </Badge>
+          )}
         </div>
+        <SortingControllers className="xl:pt-[7px]" />
       </header>
     </section>
   );

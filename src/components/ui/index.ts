@@ -14,5 +14,6 @@ export * from "./Rating";
 export * from "./Search";
 export * from "./Sidebar";
 export * from "./SkipLink";
+export * from "./SortingControllers";
 export * from "./Text";
 export * from "./TextArea";

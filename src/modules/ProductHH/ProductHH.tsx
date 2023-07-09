@@ -14,11 +14,21 @@ export const ProductHH = ({ hh, title, ...props }: IProductHH) => {
 
   return (
     <section {...props}>
-      <div className="flex items-center gap-x-[20px]">
-        <Heading as="h2" size="md">
-          {`Вакансии - ${title}`}
+      <div className="flex flex-wrap justify-between gap-x-[20px] sm:items-center sm:justify-start">
+        <h2 className="sr-only">Вакансии - {title}</h2>
+        <Heading as="span" size="md">
+          <span className="hidden sm:block">{`Вакансии - ${title}`}</span>
+          <span className="flex flex-col gap-y-[5px] sm:hidden">
+            <span>Вакансии</span>
+            <span>{title}</span>
+          </span>
         </Heading>
-        <Badge href="https://hh.ru/" size="lg" appearance="red">
+        <Badge
+          href="https://hh.ru/"
+          size="lg"
+          appearance="red"
+          className="mt-[4px] h-fit sm:mt-0"
+        >
           hh.ru
         </Badge>
       </div>
