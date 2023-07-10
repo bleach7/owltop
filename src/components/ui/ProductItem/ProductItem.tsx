@@ -16,22 +16,12 @@ export const ProductItem = ({ product, className, ...props }: IProductItem) => {
 
   const productRef = useRef<HTMLDivElement>(null);
 
-  const productResize = new ResizeObserver((entries) => {
-    const rect = entries[0].contentRect;
-
-    const width = rect.width;
-
-    if (productRef.current) {
-      productRef.current.style.width = `${width}px`;
-    }
-  });
-
   useLayoutEffect(() => {
-    if (productRef) {
-      productResize.observe(productRef.current as any);
-    }
+    if (productRef.current) {
+      const width = productRef.current.offsetWidth;
 
-    return () => productResize.unobserve(productRef.current as any);
+      productRef.current.style.maxWidth = `${width}px`;
+    }
   }, []);
 
   return (
