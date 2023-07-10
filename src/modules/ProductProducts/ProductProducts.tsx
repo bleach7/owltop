@@ -9,7 +9,7 @@ export const ProductProducts = ({
 }: IProductProducts) => {
   if (!products) {
     return (
-      <section>
+      <section className="mt-[10px]">
         <Text>К сожалению курсы отсуствуют</Text>
       </section>
     );
@@ -17,7 +17,7 @@ export const ProductProducts = ({
 
   if (products.length === 0) {
     return (
-      <section>
+      <section className="mt-[10px]">
         <Text>К сожалению курсы отсуствуют</Text>
       </section>
     );
