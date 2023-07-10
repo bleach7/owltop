@@ -19,16 +19,13 @@ export const ProductItem = ({ product, className, ...props }: IProductItem) => {
     if (productRef.current) {
       const width = productRef.current.offsetWidth;
 
-      productRef.current.style.width = `${width}px`;
+      productRef.current.style.maxWidth = `${width}px`;
     }
   }, []);
 
   return (
-    <article className={classNames(className)} {...props}>
-      <div
-        ref={productRef}
-        className="overflow-hidden rounded-[5px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.05)]"
-      >
+    <article ref={productRef} className={classNames(className)} {...props}>
+      <div className="overflow-hidden rounded-[5px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.05)]">
         <div className="bg-white p-[30px]">
           <header>
             <Heading as="h3" size="sm">

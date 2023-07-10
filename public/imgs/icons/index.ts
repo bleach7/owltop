@@ -16,5 +16,6 @@ export * from "./Products.icon";
 export * from "./RatingStar.icon";
 export * from "./Services.icon";
 export * from "./Sort.icon";
+export * from "./User.icon";
 
 export { ArrowDownIcon, ArrowUpIcon };

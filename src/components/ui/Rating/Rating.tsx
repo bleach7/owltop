@@ -38,7 +38,7 @@ export const Rating = ({
 
   const constructRating = (currentRating: number) => {
     const updatedItems = ratingItems.map((ratingItem, i) => (
-      <li key={i}>
+      <li key={i} className="flex">
         <button
           type="button"
           className="inline-block focus:outline-none focus-visible:outline-[#7653FC]"
