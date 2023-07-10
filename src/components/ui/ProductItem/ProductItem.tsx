@@ -2,8 +2,9 @@
 
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
 import { useLayoutEffect, useRef, useState } from "react";
+import { Button } from "../Button";
+import { ButtonLink } from "../ButtonLink";
 import { Divider } from "../Divider";
 import { Heading } from "../Heading";
 import { ProductItemFooter } from "../ProductItemFooter";
@@ -15,12 +16,22 @@ export const ProductItem = ({ product, className, ...props }: IProductItem) => {
 
   const productRef = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
-    if (productRef.current) {
-      const width = productRef.current.offsetWidth;
+  const productResize = new ResizeObserver((entries) => {
+    const rect = entries[0].contentRect;
 
-      productRef.current.style.maxWidth = `${width}px`;
+    const width = rect.width;
+
+    if (productRef.current) {
+      productRef.current.style.width = `${width}px`;
     }
+  });
+
+  useLayoutEffect(() => {
+    if (productRef) {
+      productResize.observe(productRef.current as any);
+    }
+
+    return () => productResize.unobserve(productRef.current as any);
   }, []);
 
   return (
@@ -39,14 +50,17 @@ export const ProductItem = ({ product, className, ...props }: IProductItem) => {
             )}
             <Divider className="mb-[20px] mt-[25px]" />
             <section className="flex flex-wrap items-center gap-x-[20px] gap-y-[10px]">
-              <Link href={product.link}>Узнать подробнее</Link>
+              <ButtonLink href={product.link}>Узнать подробнее</ButtonLink>
               {product.reviewCount !== 0 && (
-                <button
+                <Button
                   type="button"
+                  appearance="secondary"
                   onClick={() => setReviewsIsOpen(!reviewsIsOpen)}
+                  arrow={reviewsIsOpen ? "down" : "right"}
+                  className="min-w-[150px]"
                 >
                   Читать отзывы
-                </button>
+                </Button>
               )}
             </section>
           </main>

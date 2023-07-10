@@ -2,6 +2,7 @@
 
 import classNames from "classnames";
 import { useState } from "react";
+import { Button } from "../Button";
 import { Input } from "../Input";
 import { Rating } from "../Rating";
 import { Text } from "../Text";
@@ -28,7 +29,9 @@ export const ReviewForm = ({ className, ...props }: IReviewForm) => {
       </fieldset>
       <TextArea placeholder="Текст отзыва" />
       <div className="flex flex-col items-center gap-x-[15px] gap-y-[15px] md:flex-row">
-        <button type="submit">Отправить</button>
+        <Button type="submit" className="w-full md:w-fit md:min-w-[150px]">
+          Отправить
+        </Button>
         <Text size="sm">
           * Перед публикацией отзыв пройдет предварительную модерацию и проверку
         </Text>

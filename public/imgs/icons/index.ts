@@ -4,6 +4,7 @@ export * from "./Search.icon";
 export * from "./SearchReset.icon";
 import {
   IoIosArrowDown as ArrowDownIcon,
+  IoIosArrowForward as ArrowRightIcon,
   IoIosArrowUp as ArrowUpIcon,
 } from "react-icons/io";
 
@@ -18,4 +19,4 @@ export * from "./Services.icon";
 export * from "./Sort.icon";
 export * from "./User.icon";
 
-export { ArrowDownIcon, ArrowUpIcon };
+export { ArrowDownIcon, ArrowRightIcon, ArrowUpIcon };

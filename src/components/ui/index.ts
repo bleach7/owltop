@@ -1,5 +1,7 @@
 export * from "./Badge";
+export * from "./Button";
 export * from "./ButtonGoBack";
+export * from "./ButtonLink";
 export * from "./ButtonScrollToTop";
 export * from "./Divider";
 export * from "./Footer";
