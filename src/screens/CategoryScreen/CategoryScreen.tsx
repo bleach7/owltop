@@ -16,7 +16,7 @@ export const CategoryScreen = ({
       <section>
         <header>
           <Heading>{title}</Heading>
-          <Text className="mt-[10px]">
+          <Text className="mt-[10px] inline-block">
             К сожалению продукты данной категории отсуствуют {":("}
           </Text>
         </header>
