@@ -15,6 +15,7 @@ export * from "./MobileSidebar";
 export * from "./ProductItem";
 export * from "./ProductItemBody";
 export * from "./ProductItemFooter";
+export * from "./ProductItemHeader";
 export * from "./ProgressBar";
 export * from "./Rating";
 export * from "./Review";

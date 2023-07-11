@@ -1,3 +1,12 @@
 import { IFormElement } from "@/interfaces";
 
-export type IReviewForm = IFormElement;
+export interface IReviewForm extends IFormElement {
+  formRef: any;
+}
+
+export interface IReviewFormFields {
+  name: string;
+  title: string;
+  description: string;
+  rating: number;
+}

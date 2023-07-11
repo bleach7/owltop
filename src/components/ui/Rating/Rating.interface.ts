@@ -1,8 +1,9 @@
 import { IUListElement } from "@/interfaces";
-import { Dispatch, SetStateAction } from "react";
+import { FieldError } from "react-hook-form";
 
 export interface IRating extends IUListElement {
   rating: number;
-  setRating?: Dispatch<SetStateAction<number>>;
+  setRating?: (value?: any) => void;
   isEditable?: boolean;
+  error?: FieldError;
 }

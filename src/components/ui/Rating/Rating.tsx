@@ -4,12 +4,14 @@ import { RatingStarIcon } from "@/imgs/icons";
 import classNames from "classnames";
 import { Fragment, useEffect, useState } from "react";
 import { IRating } from "./Rating.interface";
+import styles from "./Rating.module.css";
 
 export const Rating = ({
   isEditable = false,
   rating,
   setRating,
   className,
+  error,
   ...props
 }: IRating) => {
   const [ratingItems, setRatingItems] = useState<React.JSX.Element[]>(
@@ -66,6 +68,9 @@ export const Rating = ({
     <ul
       className={classNames(
         "flex flex-wrap items-center gap-[5px] text-[#E2E2E2]",
+        {
+          [styles.items]: error,
+        },
         className
       )}
       {...props}

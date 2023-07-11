@@ -6,15 +6,16 @@ import { useLayoutEffect, useRef, useState } from "react";
 import { Button } from "../Button";
 import { ButtonLink } from "../ButtonLink";
 import { Divider } from "../Divider";
-import { Heading } from "../Heading";
 import { ProductItemBody } from "../ProductItemBody";
 import { ProductItemFooter } from "../ProductItemFooter";
+import { ProductItemHeader } from "../ProductItemHeader";
 import { IProductItem } from "./ProductItem.interface";
 
 export const ProductItem = ({ product, className, ...props }: IProductItem) => {
   const [reviewsIsOpen, setReviewsIsOpen] = useState(false);
 
   const productRef = useRef<HTMLDivElement>(null);
+  const reviewFormRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     if (productRef.current) {
@@ -24,15 +25,25 @@ export const ProductItem = ({ product, className, ...props }: IProductItem) => {
     }
   }, []);
 
+  const scrollToReview = () => {
+    setReviewsIsOpen(true);
+
+    if (reviewFormRef.current) {
+      reviewFormRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <article ref={productRef} className={classNames(className)} {...props}>
       <div className="overflow-hidden rounded-[5px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.05)]">
         <div className="bg-white p-[30px]">
-          <header>
-            <Heading as="h3" size="sm">
-              {product.title}
-            </Heading>
-          </header>
+          <ProductItemHeader
+            scrollToReview={scrollToReview}
+            product={product}
+          />
           <Divider className="mt-[20px]" />
           <main className="mt-[20px]">
             <ProductItemBody product={product} />
@@ -66,7 +77,10 @@ export const ProductItem = ({ product, className, ...props }: IProductItem) => {
                 height: 0,
               }}
             >
-              <ProductItemFooter reviews={product.reviews} />
+              <ProductItemFooter
+                formRef={reviewFormRef}
+                reviews={product.reviews}
+              />
             </motion.footer>
           )}
         </AnimatePresence>
