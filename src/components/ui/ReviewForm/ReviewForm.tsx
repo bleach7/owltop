@@ -18,10 +18,11 @@ export const ReviewForm = ({ className, ...props }: IReviewForm) => {
       {...props}
     >
       <fieldset className="grid grid-cols-1 gap-y-[20px] lg:flex lg:flex-wrap lg:items-center lg:justify-between">
-        <fieldset className="grid grid-cols-1 items-center gap-x-[30px] gap-y-[20px] md:grid-cols-2 lg:flex lg:w-[466px]">
+        <legend className="sr-only">Форма оставить отзыв</legend>
+        <div className="grid grid-cols-1 items-center gap-x-[30px] gap-y-[20px] md:grid-cols-2 lg:flex lg:w-[466px]">
           <Input placeholder="Имя" />
           <Input placeholder="Заголовок отзыва" />
-        </fieldset>
+        </div>
         <div className="flex items-center gap-x-[20px] gap-y-[10px]">
           <Text size="sm">Оценка:</Text>
           <Rating rating={rating} setRating={setRating} isEditable />

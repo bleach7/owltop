@@ -13,6 +13,7 @@ export * from "./Menu";
 export * from "./MenuToggler";
 export * from "./MobileSidebar";
 export * from "./ProductItem";
+export * from "./ProductItemBody";
 export * from "./ProductItemFooter";
 export * from "./ProgressBar";
 export * from "./Rating";

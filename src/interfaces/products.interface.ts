@@ -13,6 +13,7 @@ export interface IProductData {
   oldPrice: number;
   characteristics: IProductCharacteristicData[];
   advantages?: string;
+  disadvantages?: string;
   initialRating: number;
   createdAt: string;
   updatedAt: string;

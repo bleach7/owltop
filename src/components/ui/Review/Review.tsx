@@ -30,7 +30,12 @@ export const Review = ({ review, ...props }: IReview) => {
         </div>
       </header>
       <main className="mt-[10px]">
-        <Text size="sm">{review.description}</Text>
+        <Text
+          size="sm"
+          className="inline-block max-h-[100px] min-h-[100px] w-full overflow-y-scroll"
+        >
+          {review.description}
+        </Text>
       </main>
     </article>
   );

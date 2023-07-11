@@ -7,8 +7,8 @@ import { Button } from "../Button";
 import { ButtonLink } from "../ButtonLink";
 import { Divider } from "../Divider";
 import { Heading } from "../Heading";
+import { ProductItemBody } from "../ProductItemBody";
 import { ProductItemFooter } from "../ProductItemFooter";
-import { Text } from "../Text";
 import { IProductItem } from "./ProductItem.interface";
 
 export const ProductItem = ({ product, className, ...props }: IProductItem) => {
@@ -35,9 +35,7 @@ export const ProductItem = ({ product, className, ...props }: IProductItem) => {
           </header>
           <Divider className="mt-[20px]" />
           <main className="mt-[20px]">
-            {product.description && (
-              <Text size="md">{product.description}</Text>
-            )}
+            <ProductItemBody product={product} />
             <Divider className="mb-[20px] mt-[25px]" />
             <section className="flex flex-wrap items-center gap-x-[20px] gap-y-[10px]">
               <ButtonLink href={product.link}>Узнать подробнее</ButtonLink>
