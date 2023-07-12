@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   description:
     "Подборки лучших курсов и рейтинги, основанные на реальных отзывах",
   themeColor: "#7653FC",
+  openGraph: {
+    url: `${process.env.NEXT_PUBLIC_API_URL}/`,
+    locale: "ru_RU",
+  },
 };
 
 const RootLayout = async ({ children }: { children: ReactNode }) => {

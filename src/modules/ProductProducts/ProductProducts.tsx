@@ -28,6 +28,7 @@ export const ProductProducts = ({
       className={classNames("flex flex-col gap-y-[30px]", className)}
       {...props}
     >
+      <h2 className="sr-only">Продукты</h2>
       {products.map((product) => (
         <ProductItem product={product} key={product._id} />
       ))}

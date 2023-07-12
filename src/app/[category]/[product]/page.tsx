@@ -1,6 +1,8 @@
 import { getMenu, getPage, getProducts } from "@/api";
 import { firstLevelMenuItems } from "@/constants";
 import { ProductScreen } from "@/screens";
+import { appTitle } from "@/utils";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 interface IContext {
@@ -31,6 +33,23 @@ export const generateStaticParams = async (): Promise<IPath[]> => {
   }
 
   return paths;
+};
+
+export const generateMetadata = async ({
+  params,
+}: IContext): Promise<Metadata> => {
+  const page = await getPage(params.product);
+
+  return {
+    title: appTitle(page.metaTitle),
+    description: page.metaDescription,
+    openGraph: {
+      title: page.metaTitle,
+      description: page.metaDescription,
+      type: "article",
+      locale: "ru_RU",
+    },
+  };
 };
 
 const Product = async ({ params }: IContext) => {
